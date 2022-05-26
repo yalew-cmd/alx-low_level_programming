@@ -1,23 +1,15 @@
-/*
- * File: 100-get_endianness.c
- * Auth: Brennan D Baraban
- */
-
+#include <stdio.h>
 #include "holberton.h"
 
 /**
- * get_endianness - Checks the endianness.
- *
- * Return: If big-endian - 0.
- *         If little-endian - 1.
+ * get_endianness - Write a function that checks the endianness.
+ * Prototype: int get_endianness(void).
+ * Return: 1, if architecture is little endian, 0 in case of big endian.
  */
 int get_endianness(void)
 {
-	int num = 1;
-	char *endian = (char *)&num;
+	unsigned int x = 1;
+	char *c = (char *) &x;
 
-	if (*endian == 1)
-		return (1);
-
-	return (0);
+	return ((int)*c);
 }
